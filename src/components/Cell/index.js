@@ -5,13 +5,10 @@ const moveKey = ({ x, y }) => {
   const [moveX, handleX] = useState(0);
   const [moveY, handleY] = useState(0);
 
-  useEffect(
-    () => {
-      handleX(currentX => currentX + x);
-      handleY(currentY => currentY + y);
-    },
-    [moveX, moveY]
-  );
+  useEffect(() => {
+    handleX((currentX) => currentX + x);
+    handleY((currentY) => currentY + y);
+  }, [moveX, moveY]);
 
   return { x, y };
 };
